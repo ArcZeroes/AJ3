@@ -1,0 +1,28 @@
+name: PageRank Test
+on: 
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+  
+jobs:
+  tests:
+    name: "Python ${{ matrix.python-version }}"
+    runs-on: "ubuntu-latest"
+    env:
+      USING_COVERAGE: '3.6,3.8'
+
+    strategy:
+      matrix:
+        python-version: ["3.6", "3.7", "3.8", "pypy3"]
+        
+    steps:
+      - uses: "actions/checkout@v2"
+      - uses: "actions/setup-python@v2"
+        with:
+          python-version: "{{ matrix.python-version }}"
+      - name: "Test pageRank"
+        run: |
+          python -m unittest pageRank_test.py
+      
