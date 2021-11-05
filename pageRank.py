@@ -43,14 +43,14 @@ class Internet:
                         tempRank += 0
                 page.pageRank = tempRank
                 
-                page.showPageRank()
+                #page.showPageRank()
                 #Check all pages
                 notEnoughDiff = notEnoughDiff and self.__enoughDiff(page)
                 
-            print("---")
+            #print("---")
 
-        self.showFullPageRank()    
-        self.__showIteration()
+        #self.showFullPageRank()    
+        #self.__showIteration()
 
     def showFullPageRank(self):
         fullRank = 0
