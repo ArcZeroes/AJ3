@@ -22,7 +22,7 @@ class Page:
 
 
 class Internet:
-    def __init__(self, delta:float, allPages:list[Page]):
+    def __init__(self, delta:float, allPages:list):
         self.allPages = allPages
         self.delta = delta
         self.iterationCnt = 0 
